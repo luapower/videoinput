@@ -4,8 +4,8 @@ tagline: video capturing
 
 ## `local vi = require'videoinput'`
 
-A cross-cross-platform video capture library that captures video frames
-as bgra8 [bitmap]s.
+A cross-cross-platform library for capturing video frames from webcams
+and other devices in real-time as bgra8 [bitmap]s.
 
 <warn>Work in progress.</warn>
 
