@@ -5,7 +5,11 @@ local bitmap = require'bitmap'
 local box2d = require'box2d'
 
 local app = nw:app()
-local win = app:window{cw = 700, ch = 500}
+local win = app:window{cw = 700, ch = 500, title = 'Press S to toggle session'}
+
+for i,dev in ipairs(vi.devices()) do
+	print(dev.isdefault and '*' or '', dev.id, dev.name)
+end
 
 local session = vi.open{}
 
@@ -24,6 +28,12 @@ function win:repaint()
 	local dst = self:bitmap()
 	dst:clear()
 	bitmap.paint(src, dst, 10, 10)
+end
+
+function win:keydown(key)
+	if key == 'S' then
+		session:running(not session:running())
+	end
 end
 
 session:start()
