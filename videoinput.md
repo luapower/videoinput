@@ -1,5 +1,5 @@
 ---
-tagline: video capture
+tagline: video capturing
 ---
 
 ## `local vi = require'videoinput'`
